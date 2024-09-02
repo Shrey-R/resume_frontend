@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import getNavBarData from "./helpers/getNavBarData.js";
+import NavBar from "./NavBar/index.js";
+import Form from "./Form/index.js";
+import DisplayData from "./DisplayData/index.js";
+import styles from "./styles.module.css";
 
-function App() {
+export default function App() {
+  const [activeTab, setActiveTab] = useState("form");
+  const navBarData = getNavBarData(setActiveTab);
+
+  const Component = {
+    form: <Form />,
+    display: <DisplayData />,
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`${styles.container} ${styles.grainy}`}>
+      <NavBar data={navBarData} activeTab={activeTab}/>
+      {Component[activeTab]}
     </div>
   );
 }
-
-export default App;

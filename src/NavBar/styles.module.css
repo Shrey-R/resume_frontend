@@ -1,0 +1,36 @@
+.container {
+    min-height: 14vh;
+    background-color: #08215b;
+    width: 100%;
+    color: #d9d8d8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .item {
+    display: flex;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 0 30px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    min-width: 150px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .item:hover {
+    font-weight: bold;
+    scale: 1.3;
+  }
+  
+  .item {
+    color: #000313;
+  }
+  
+  .active{
+    scale: 1.3;
+    font-weight: bold;
+  }
